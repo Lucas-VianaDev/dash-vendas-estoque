@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>VendaVista | Dashboard de vendas e estoque</title>
+    <meta
+      name="description"
+      content="Dashboard demonstrativo para registrar vendas, acompanhar lucro estimado e alertar estoque baixo."
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <aside class="sidebar">
+      <strong>VendaVista</strong>
+      <nav>
+        <a href="#resumo">Resumo</a>
+        <a href="#nova-venda">Nova venda</a>
+        <a href="#produtos">Produtos</a>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <header class="page-head">
+        <div>
+          <p class="eyebrow">Painel operacional</p>
+          <h1>Vendas, lucro e estoque em uma tela.</h1>
+        </div>
+        <button id="resetData" type="button">Restaurar dados</button>
+      </header>
+
+      <section class="metrics" id="resumo">
+        <article>
+          <span>Faturamento</span>
+          <strong id="revenue">R$ 0,00</strong>
+        </article>
+        <article>
+          <span>Lucro estimado</span>
+          <strong id="profit">R$ 0,00</strong>
+        </article>
+        <article>
+          <span>Ticket médio</span>
+          <strong id="avgTicket">R$ 0,00</strong>
+        </article>
+        <article>
+          <span>Vendas</span>
+          <strong id="salesCount">0</strong>
+        </article>
+      </section>
+
+      <section class="grid">
+        <form class="panel" id="saleForm">
+          <div class="panel-head">
+            <h2 id="nova-venda">Registrar venda</h2>
+            <p>Simule uma venda e veja o impacto no painel e no estoque.</p>
+          </div>
+          <label>
+            Produto
+            <select id="productSelect"></select>
+          </label>
+          <label>
+            Quantidade
+            <input id="quantity" type="number" min="1" value="1" />
+          </label>
+          <button type="submit">Registrar venda</button>
+          <p id="feedback" class="feedback" aria-live="polite"></p>
+        </form>
+
+        <section class="panel">
+          <div class="panel-head">
+            <h2>Produtos mais vendidos</h2>
+            <p>Ranking gerado com base nas vendas registradas.</p>
+          </div>
+          <div id="ranking" class="ranking"></div>
+        </section>
+      </section>
+
+      <section class="panel" id="produtos">
+        <div class="panel-head">
+          <h2>Estoque</h2>
+          <p>Produtos com estoque baixo ficam destacados para reposição.</p>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Produto</th>
+                <th>Preço</th>
+                <th>Custo</th>
+                <th>Estoque</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="stockTable"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <h2>Últimas vendas</h2>
+          <p>Histórico salvo no navegador usando LocalStorage.</p>
+        </div>
+        <div id="salesHistory" class="sales-history"></div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
