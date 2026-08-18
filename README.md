@@ -2,6 +2,8 @@
 
 Dashboard demonstrativo para pequenos negócios acompanharem vendas, lucro estimado e estoque.
 
+https://lucas-vianadev.github.io/dash-vendas-estoque/
+
 ## O problema
 
 Muitos pequenos negócios vendem pelo WhatsApp, Instagram ou balcão, mas não têm clareza sobre faturamento, lucro, ticket médio e produtos que precisam de reposição.
